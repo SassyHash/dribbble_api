@@ -1,7 +1,8 @@
 var ajaxRequest = function(option){
-  option = option || "/everyone"
+  option = option || "/popular"
+  console.log(option);
   $.ajax({
-        url           : 'http://api.dribbble.com/shots' + option,
+        url           : 'http://api.dribbble.com/shots' + option + '?per_page=40?page=5',
         dataType      : 'jsonp',
         jsonpCallback : 'dealJSONP'
       });
@@ -10,7 +11,7 @@ var ajaxRequest = function(option){
 
 var dealJSONP = function(data){
   console.log(data);
-  $('body').html("<h1>It works!</h1>");
+  $('.row').html("<span><h1> data here </h1></span>");
 };
 
 
@@ -18,4 +19,4 @@ var dealJSONP = function(data){
     
 
 
-ajaxRequest();
+ajaxRequest("/everyone");
