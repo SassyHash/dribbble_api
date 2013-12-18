@@ -4,6 +4,7 @@ body, h1, div, ul, li {
   margin: 0;
   font-family: Helvetica;
 }
+
 ul,li {
   list-style-type: none;
   display: inline;
@@ -13,6 +14,8 @@ ul,li {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #e6f4aa;
+  padding-bottom: 100px;
 }
 
 #nav {
@@ -34,15 +37,30 @@ ul,li {
   font-weight: normal;
 }
 
-
 .row {
-  width: 100%;
-  height: 100px;
-  background-color: #e6f4aa;
-  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  max-width: 1260px; 
+  margin-top: 5px;
 }
 
 
+.shot {
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+}
 
 
+.pages li {
+  margin: 5px;
+}
+
+#footer {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  padding-top: 20px;
+  color: white;
+}
 
