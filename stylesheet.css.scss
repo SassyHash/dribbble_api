@@ -1,14 +1,13 @@
+
 body, h1, div, ul, li {
   padding: 0;
   margin: 0;
   font-family: Helvetica;
 }
-
 ul,li {
   list-style-type: none;
   display: inline;
 }
-
 
 #wrap {
   width: 100%;
@@ -20,7 +19,7 @@ ul,li {
   background-color: black;
   width: 100%;
   height: 60px;
-  color: #e3f5ff;
+  color: #e6f4aa;
 }
 
 .text {
@@ -39,7 +38,8 @@ ul,li {
 .row {
   width: 100%;
   height: 100px;
-  background-color: #d8da3d;
+  background-color: #e6f4aa;
+  padding: 20px;
 }
 
 
