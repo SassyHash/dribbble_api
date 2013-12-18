@@ -31,13 +31,14 @@ var clearPage = function(){
 
 
 var renderShot = function(shot){
-  var shotElement = $('<img>'); 
-  console.log(shot.id);
-  shotElement.attr('class', 'shot');
-  shotElement.attr('src', shot.image_url);
+  var shotElement = $("<img>");
 
-  $('.shots').append(shotElement);
-
+  shotElement.attr("class", "shot");
+  shotElement.attr("src", shot.image_url);
+  $(".shots").append(shotElement);
+  $(".shot").wrap(function(){
+    return "<a href="+ shot.url+"></a>";
+  });
   //$(".shots").append(
   //  shot.image_400_url
   //   );
