@@ -1,0 +1,48 @@
+body, h1, div, ul, li {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+
+ul,li {
+  list-style-type: none;
+  display: inline;
+}
+
+
+#wrap {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  color: #e3f5ff;
+}
+
+.text {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#popular, #everyone {
+  color: white;
+  padding: 5px;
+  font-weight: normal;
+}
+
+
+.row {
+  width: 100%;
+  height: 100px;
+  background-color: #d8da3d;
+}
+
+
+
+
+
