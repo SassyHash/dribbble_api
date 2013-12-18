@@ -30,13 +30,12 @@ var clearPage = function(){
 };
 
 
-var renderShot = function(shot){
+var renderShot = function(shot, index){
   var shotElement = $("<img>");
-
-  shotElement.attr("class", "shot");
+  shotElement.attr("class", "shot-"+index);
   shotElement.attr("src", shot.image_url);
   $(".shots").append(shotElement);
-  $(".shot").wrap(function(){
+  $(".shot-"+index).wrap(function(){
     return "<a href="+ shot.url+"></a>";
   });
   //$(".shots").append(
