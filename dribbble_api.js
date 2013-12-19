@@ -28,7 +28,11 @@ var api = (function() {
 
     if (shotsArray.length > 0) {
       clearPage();
-      paginate(data.total, data.page);  
+      if (option == "/popular" && itemsPp == 30) {
+        paginate(1000, data.page);
+      } else {
+        paginate(data.total, data.page);  
+      };
       _.each(shotsArray, renderShot);
     } else {
       clearPage();
