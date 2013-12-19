@@ -70,17 +70,25 @@ ul,li {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 840px) {
     /* display regular shots 2 in a row */ 
   .row {
-    max-width: 400px;
+    max-width: 500px;
+  }
+  .shots img {
+    width: 500px;
+    height: auto;
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 520px) {
   /* display smaller shots 1 in a row */
   .shots img {
     width: 330px;
     height: auto;
+  }
+
+  #footer {
+    padding: 5px;
   }
 }
