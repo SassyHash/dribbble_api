@@ -1,12 +1,25 @@
-var option = option || "/popular";
-var itemsPp = itemsPp || 18;
+var api = (function() {
+
+var option;
+var itemsPp;
+
+var setOption = function(opt) {
+  option = opt || "/popular";
+};
+
+var setItemsPp = function(pp) {
+  itemsPp = pp || 18;
+}
 
 var ajaxRequest = function(page){
+  console.log('ajaxRequest');
+  console.log(itemsPp);
+
   page = page || 1
   $.ajax({
         url : "http://api.dribbble.com/shots" + option + "?per_page=" + itemsPp +"&page=" + page,
         dataType : "jsonp",
-        jsonpCallback : "dealJSONP"
+        jsonpCallback : "api.dealJSONP"
       });
 }
 
@@ -27,7 +40,6 @@ var dealJSONP = function(data){
 var clearPage = function(){
   $(".shots").empty();
 };
-
 
 var renderShot = function(shot, index){
   var shotElement = $("<img>");
@@ -52,37 +64,42 @@ var pageFlip = function(page){
   ajaxRequest(page);
 }
 
-ajaxRequest();
+return {
+  ajaxRequest: ajaxRequest, 
+  dealJSONP: dealJSONP, 
+  setItemsPp: setItemsPp,
+  setOption: setOption,
+}
 
+})();
+
+api.ajaxRequest();
 
 $(document).ready(function(){
   $("#min").hide();
 
   $("#everyone").click(function(){
     option = "/everyone";
-    ajaxRequest();
+    api.ajaxRequest();
   });
 
   $("#popular").click(function(){
     option = "/popular";
-    ajaxRequest();
+    api.ajaxRequest();
   });
 
   $("#max").click(function(){
-    itemsPp = 30;
-    ajaxRequest();
+    api.itemsPp = 30;
+    api.ajaxRequest();
     $("#max").hide();
     $("#min").show();
   });
 
   $("#min").click(function(){
-    itemsPp = 18;
-    ajaxRequest();
+    api.itemsPp = 18;
+    api.ajaxRequest();
     $("#min").hide();
     $("#max").show();
-  })
-  
- 
-})
+  });
 
-
+}); 
