@@ -1,8 +1,7 @@
 var option = option || "/popular";
 var itemsPp = itemsPp || 18;
+
 var ajaxRequest = function(page){
-  console.log(itemsPp);
-  console.log(page);
   page = page || 1
   $.ajax({
         url : "http://api.dribbble.com/shots" + option + "?per_page=" + itemsPp +"&page=" + page,
@@ -32,10 +31,11 @@ var clearPage = function(){
 
 var renderShot = function(shot, index){
   var shotElement = $("<img>");
-  shotElement.attr("class", "shot-"+index);
+  shotElement.attr("class", "shot");
+  shotElement.attr("id", "shot-"+index);
   shotElement.attr("src", shot.image_url);
   $(".shots").append(shotElement);
-  $(".shot-"+index).wrap("<a href="+ shot.url+"></a>");
+  $("#shot-"+index).wrap("<a href="+ shot.url+"></a>");
 };
 
 var paginate = function(total_items, page){

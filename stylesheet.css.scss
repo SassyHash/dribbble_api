@@ -63,3 +63,23 @@ ul,li {
   color: white;
 }
 
+@media (max-width: 1300px) {
+  #wrap {
+    background-color: white;
+  }
+  // display smaller shots 2 in a row
+  .row {
+    max-width: 860px;
+  }
+}
+
+@media (max-width: 440px) {
+  #wrap {
+    background-color: white;
+  }
+  .shots img {
+    width: 330px;
+    height: auto;
+  }
+  //display smaller shot 1 in a row
+}
